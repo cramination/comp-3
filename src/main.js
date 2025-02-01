@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const loader = new GLTFLoader();
+//const loader = new GLTFLoader();
 
 
 
@@ -61,7 +61,13 @@ onWindowResize();
 
 // objects
 
-let comp ;
+const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+
+
+/*let comp ;
 
 
 loader.load(
@@ -78,10 +84,13 @@ loader.load(
 (error) => {
     console.error('An error happened', error);
 }
-);
+);*/
 
 function animate() {
+  
   requestAnimationFrame( animate );
+  cube.rotation.x += 0.01;
+	cube.rotation.y += 0.01;
 	controls.update();
 	renderer.render( scene, camera );
 
