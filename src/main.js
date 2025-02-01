@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-//const loader = new GLTFLoader();
+const loader = new GLTFLoader();
 
 
 
@@ -67,11 +67,11 @@ const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 
-/*let comp ;
+let comp ;
 
 
 loader.load(
-	"src/test-cube.gltf",
+	"src/models/test-cube.gltf",
 	function ( gltf ) {
     comp = gltf.scene
     comp.position.set(-.6, 0, 3.6)
@@ -84,7 +84,7 @@ loader.load(
 (error) => {
     console.error('An error happened', error);
 }
-);*/
+);
 
 function animate() {
   
