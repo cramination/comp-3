@@ -67,16 +67,14 @@ const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 
-let comp ;
-
 
 loader.load(
 	"src/models/test-cube.gltf",
 	function ( gltf ) {
-    comp = gltf.scene
+    const comp = gltf.scene
     comp.position.set(-.6, 0, 3.6)
     //comp.scale.set(2, 2, 2)
-		scene.add( gltf.scene )
+		scene.add( comp )
 	},
   (xhr) => {
     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
